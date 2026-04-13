@@ -1,0 +1,50 @@
+{% use "users/profil.html.twig" %}
+
+{% block StrucGestionUser %}
+    <div class="layers layers-users">
+        <div class="card text-center card-users">
+            <div class="card-header">
+                <label class="col-sm-4 "><h1>Gestion des utilisateurs</h1></label>
+                <input type="button" class="btn btn-primary refresh-users-list" value="Refresh" >
+            </div>
+            <div class="card-body">
+                <div id="div-users-list">
+                    <table id="list-users" class="table dataTable">
+                        <thead>
+                            <th>
+                                Nom
+                            </th>
+                            <th>
+                                Prénom
+                            </th>
+                            <th>
+                                Email
+                            </th>
+                            <th>
+                                Société
+                            </th>
+                            <th>
+                                Role
+                            </th>
+                            <th>
+                                Action
+                            </th>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="card-footer text-muted">
+
+            </div>
+        </div>
+
+        <div id="div-profil-user">
+            {% block profilUser %}
+                {{ parent() }}
+            {% endblock %}
+        </div>
+    </div>
+{% endblock %}

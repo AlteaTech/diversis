@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+{% block title %}Diversis WinDiv{% endblock %}
+
+
+{% block body %}
+{% if last_username is not defined %}
+	{% set last_username = '' %}
+{% endif %}
+
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+	<div class="container full">
+		<div class="row full">
+			<div class="col col-login">
+
+				<ul class="nav nav-tabs nav-login">
+					<li class="active">
+						<a data-toggle="tab" href="#auth">
+							Authentification
+						</a>
+					</li>
+					<li class="">
+						<a data-toggle="tab" href="#inscr">
+							Inscription
+						</a>
+					</li>
+				</ul>
+
+				<div class="tab-content tab-content-login">
+    				<div id="auth" class="tab-pane active">
+						<form class="form-login" id="form-auth" action="{{path('login-check')}}">
+							<div>
+                                <img class="img-logo-login" src="http://diversis.fr/wp-content/uploads/2019/03/1441114107.jpg" alt="logo diversis"/>
+                            </div>
+                            {% if message_conn is defined %}
+                            	<div class="box-message-login">
+                            		{{message_conn}}
+                            	</div>
+                            {% endif %}
+							<input type="email" class="form-control" name="_username" placeholder="Email" value="{{ last_username }}" required="" autofocus="" autocomplete="email" aria-describedby="emailHelp" />
+							<input type="password" class="form-control" name="_password" placeholder="Password" required=""/>
+							<input type="checkbox" id="remember_me" name="_remember_me" checked/>
+							<label for="remember_me">Se souvenir de moi</label>
+							<input type="button" value="Valider" id="submit-form-auth" class="btn btn-lg btn-primary btn-block" name="testsubmit"/>
+						</form>
+					</div>
+
+    				<div id="inscr" class="form-signin tab-pane fade">
+							<div class="div-img-signin">
+                                <img class="img-logo-login" src="http://diversis.fr/wp-content/uploads/2019/03/1441114107.jpg" alt="logo diversis"/>
+                            </div>
+						{{ form(registrationForm) }}
+						<div class="g-recaptcha" data-sitekey="6Lfo9LAUAAAAABz6gdeSgvz2lOUkJtfIjnvrYK0W"></div>
+					</div>
+				</div>
+
+				<div class="version-ini">
+					Diversis &reg; - versions {{ constant('App\\Utils\\Constantes::VERSION_INI') }}
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<input type="hidden" value='{{ path("panel_admin") }}' id="path-panel-admin" />
+	{% if is_authen_form is defined %}
+		<input type="hidden" value='{{ is_authen_form }}' id="is_authen_form" />
+	{% endif %}
+
+	<script>
+		myVar = setTimeout(function(){ $("body>div:last-child()>div:last-child()>iframe").css("min-height", "650px");$("body>div:last-child()>div:last-child()>iframe").css("min-width", "450px");console.log("fixe Recapchat"); }, 5000);
+	</script>
+{% endblock %}

@@ -1,0 +1,66 @@
+{% block menuSidebar %}
+
+<ul class="sidebar-menu">
+    <li class="nav-item item-home-li">
+        <a class="sidebar-link" href="#">
+            <span class="icon-holder">
+                <i class="ti-home c-blue-dashboard"></i>
+            </span>
+            <span class="title-item item-home-span">Accueil</span>
+        </a>
+    </li>
+    <li class="nav-item item-struct" data-target="sm-struct">
+        <a class="sidebar-link" href="#">
+            <span class="icon-holder">
+                <i class="ti-settings c-blue-dashboard"></i>
+            </span>
+            <span class="title-item item-dashboard">Structures</span>
+        </a>
+    </li>
+    <div class="sous-menu-structure hvr-bubble-left sous-menu">
+        <li class="sm-struct" id="sm-struct-tour">
+            <a class="sidebar-link" href="#">
+                <span class="title-item item-tour" data-type="tour">Tour</span>
+            </a>
+        </li>
+        <li class="sm-struct" id="sm-struct-portique" >
+            <a class="sidebar-link link-to-portique" href="#">
+                <span class="title-item item-portique" data-type="portique">Portique</span>
+            </a>
+        </li>
+        <li class="sm-struct" id="sm-struct-totem" >
+            <a class="sidebar-link" href="#">
+                <span class="title-item item-totem" data-type="totem">Totem</span>
+            </a>
+        </li>
+    </div>
+    {% if is_granted('ROLE_ADMIN') %}
+        <li class="nav-item item-user-li" data-target="sm-struct">
+            <a class="sidebar-link" href="#">
+                <span class="icon-holder">
+                    <i class="ti-user c-blue-dashboard"></i>
+                </span>
+                <span class="title-item item-user-span">Utilisateurs</span>
+            </a>
+        </li>
+    {% endif %}
+    <li class="nav-item item-guide-li" data-target="sm-struct">
+        <a class="sidebar-link" target="_blankc" href="/pdf/Guide d'utilisation WinDiv V1.1.1.pdf">
+                <span class="icon-holder">
+                    <i class="ti-bookmark-alt c-blue-dashboard"></i>
+                </span>
+            <span class="title-item item-user-span" id="guideUtil">Guide d'utilisation</span>
+        </a>
+    </li>
+    <li class="nav-item item-condition-li" data-target="sm-struct">
+        <a class="sidebar-link" target="_blankc" href="/pdf/Charte d'utilisation WinDiv du 22 mai 2019.pdf">
+                <span class="icon-holder">
+                    <i class="ti-book c-blue-dashboard"></i>
+                </span>
+            <span class="title-item item-user-span">Conditions générales</span>
+        </a>
+    </li>
+
+</ul>
+
+{% endblock %}

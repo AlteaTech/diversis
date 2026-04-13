@@ -1,0 +1,181 @@
+{% block StrucTour %}
+    <div class="layers layers-tour">
+        <div class="card text-center card-tour">
+            <div class="card-header">
+                <label class="col-sm-4 "><h1>Tour</h1></label>
+                <table class="tbl-tour-toggle col-sm-5">
+                    <tr>
+                        <td>
+                            <div class="toggle-tour toggle-1">
+                                <button id="id-toggle-tour-habille" type="button" class="btn btn-lg btn-toggle" data-toggle="button" aria-pressed="false" autocomplete="off">
+                                    <div class="handle"></div>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="card-body">
+                <div id="infos_event_tour">
+                    <table>
+                        <tr>
+                            <td><label>Événement : </label><input type="text" id="nom_event_tour"/></td>
+                            <td><label>Dénomination de la structure : </label><input type="text" id="nom_struct_tour"/></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="spr-tour content-sprite full">
+                    <div id="spr-tour" ></div>
+                    <div id="div-input-tour">
+                        <div class="box-calcul-obligatoire">
+                            <table >
+                                <thead>
+                                <th colspan="2">Informations principales <i id="showDetailTour" data-toggle="modal" data-target="#portiqueTour" data-keyboard="true" data-backdrop="false" class="ti-help-alt c-blue-dashboard"></i></th>
+                                </thead>
+                                <tr>
+                                    <td>
+                                        <label >Hauteur totale (m)</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" step="any" lang="en" id="hauteur-totale-tour" class="config-commat config-tour-result" tabindex="100" value=""/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label >Masse (Kg)</label>
+                                    </td>
+                                    <td>
+                                        <input type="text"  step="any" id="masse-tour" class="config-commat config-tour-result" tabindex="101"  value=""/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>Largeur face (m)</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" step="any" id="face-tour" class="config-commat config-tour-result" tabindex="102"  value=""/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>Profondeur (m)</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" step="any" id="prof-tour" class="config-commat config-tour-result" tabindex="103" value=""/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <input type="button" id="calcul-lestage-input-tour" class="btn btn-primary" value="Commencer les calculs"/>
+                        <input type="button" class="btn btn-primary reset-calcul" value="Recommencer" data-target="tour"/>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer text-muted">
+                <div id="div-lestage-calcul-table" class="">
+                    <div id="div-block-table-calcul-vent-tour">
+                        <table id="data-vent-table">
+                            <thead>
+                            <th colspan="2">Calcul du lestage </th>
+                            <th><a class="detail-tableau-vent-toggle" data-target="tour"> <i class="ti-arrow-circle-down"> détails</i></a></th>
+                            </thead>
+                            <tbody>
+                            <tr class="start">
+                                <td>Vitesse du vent  = </td>
+                                <td><input type="text" step="any" class="config-commat input-v-t-A cl-vitesse" title="" tabindex="104" /></td>
+                                <td>km/h</td>
+                            </tr>
+                            <tr>
+                                <td>Vitesse du vent  = </td>
+                                <td><input type="text" step="any" class="config-commat input-v-t-B" tabindex="-1"/></td>
+                                <td>m/s</td>
+                            </tr>
+                            <tr>
+                                <td>Pression dynamique générée par le vent = </td>
+                                <td><input type="text" step="any" class="config-commat input-v-t-C" tabindex="-1"/></td>
+                                <td>daN/m²</td>
+                            </tr>
+                            <tr>
+                                <td>Effort sur une tour = </td>
+                                <td><input type="text" step="any" class="config-commat input-v-t-D" tabindex="-1"/></td>
+                                <td>daN</td>
+                            </tr>
+                            <tr>
+                                <td>Moment Renversant = </td>
+                                <td><input type="text" step="any" class="config-commat input-v-t-E" tabindex="-1"/></td>
+                                <td>daN.m</td>
+                            </tr>
+                            <tr>
+                                <td>Moment Stabilisant = </td>
+                                <td><input type="text" step="any" class="config-commat input-v-t-F" tabindex="-1"/></td>
+                                <td>daN.m</td>
+                            </tr>
+                            <tr>
+                                <td>Ecart ("+" Stable et "-" Instable) = </td>
+                                <td><input type="text" step="any" class="config-commat input-v-t-G" tabindex="-1"/></td>
+                                <td>daN.m</td>
+                            </tr>
+                            <tr class="rowResultLestageTour">
+                                <td>LEST A PREVOIR </td>
+                                <td><input type="text" step="any" id="resultLestageTour" tabindex="-1" class="input-v-t-H"/></td>
+                                <td>kg</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <div class="div-btn-calcul-vent div-btn-calcul-vent-tour">
+                            <input type="button" class="btn-calcul-vent-tour btn btn-primary" tabindex="105" value="Calculer"/>
+                        </div>
+                    </div>
+
+                    <div id="div-table-pression-sol-tour">
+                        <table>
+                            <thead>
+                            <th colspan="3">Calcul pression au sol</th>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Type de cale </td>
+                                <td>
+                                    <label>Circulaire <input name="" id="chx-cir-cale-tour" data-group="group1" tabindex="110" class="chx-cale-tour chx-cale" type="checkbox" value="circulaire"/></label>
+                                </td>
+                                <td>
+                                    <label>Rectangulaire <input name="" id="chx-rec-cale-tour" data-group="group1" tabindex="111" class="chx-cale-tour chx-cale" type="checkbox" value="rectangulaire"/></label>
+                                </td>
+                            </tr>
+                            <tr id="row-diametre-tour">
+                                <td>Diamètre (cm) = </td>
+                                <td><input type="text" step="any" class="config-commat background-very-light-blue input-v-t-DIAM-lon" tabindex="120" placeholder=""/></td>
+                                <td><input type="text" step="any" class="config-commat background-very-light-blue input-v-t-DIAM-lar" tabindex="121" placeholder="largeur"/></td>
+                            </tr>
+                            <tr>
+                                <td>Surface Cale = </td>
+                                <td><input type="text" step="any" class="config-commat input-v-t-SC"/></td>
+                                <td>cm²</td>
+                            </tr>
+                            <tr>
+                                <td>Descente de charge = </td>
+                                <td><input type="text" step="any" class="config-commat input-v-t-CHARGE" tabindex="-1"/></td>
+                                <td>kg</td>
+                            </tr>
+                            <tr>
+                                <td>Pression générée <i id="showPressionSolDetails" data-toggle="modal" data-target="#pressionSolDetails" data-keyboard="true" data-backdrop="false" class="ti-help-alt c-blue-dashboard"></i> = </td>
+                                <td><input type="text" step="any" class="config-commat input-v-t-PPP" tabindex="-1"/></td>
+                                <td>bar(s)</td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="div-btn-pression-calcul">
+                            <input type="button" class="btn-calcul-pression-sol-tour btn btn-primary" tabindex="123" value="Calculer"/>
+                        </div>
+
+                    </div>
+
+                    <div class="div-export-pdf-tour">
+                        <a href="" class="l-export-pdf" target="_blank"><i class="ti-file"></i>Imprimer le rapport</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

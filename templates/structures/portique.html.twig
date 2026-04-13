@@ -1,0 +1,211 @@
+{% block StrucPortique %}
+    <div class="layers layers-portique">
+        <div class="card text-center card-portique">
+            <div class="card-header">
+                <label class="col-sm-4 "><h1>Portique</h1></label>
+                <table class="tbl-portique-toggle col-sm-5">
+                    <tr>
+                        <td>
+                            <div class="toggle-portique toggle-1">
+                                <button id="id-toggle-portique-habille" type="button" class="btn btn-lg btn-toggle" data-toggle="button" aria-pressed="false" autocomplete="off">
+                                    <div class="handle"></div>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="toggle-portique toggle-2">
+                                <button id="id-toggle-portique-pont" type="button" class="btn btn-lg btn-toggle" data-toggle="button" aria-pressed="false" autocomplete="off">
+                                    <div class="handle"></div>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="card-body">
+                <div id="infos_event_portique">
+                    <table>
+                        <tr>
+                            <td><label>Événement : </label><input type="text" id="nom_event_portique"/></td>
+                            <td><label>Dénomination de la structure : </label><input type="text" id="nom_struct_portique"/></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="spr-portique content-sprite full">
+                    <div id="spr-portique" ></div>
+                    <div id="div-input-portique">
+                        <div class="box-calcul-obligatoire">
+                            <table >
+                                <thead>
+                                <th colspan="2">Informations principales <i id="showDetailPortique" data-toggle="modal" data-target="#portiqueSchema" data-keyboard="true" data-backdrop="false" class="ti-help-alt c-blue-dashboard"></i></th>
+                                </thead>
+                                <tr>
+                                    <td>
+                                        <label >Hauteur totale (m)</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" id="hauteur-totale-portique" class="config-commat config-tour-result config-portique" value=""/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label >Hauteur de passage (m)</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" id="hauteur-pass-portique" class="config-commat config-tour-result config-portique" value=""/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label >Masse (kg)</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" id="masse-portique" class="config-commat config-tour-result config-portique" value=""/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>Largeur d’une tour (m)</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" id="face-portique" class="config-commat config-tour-result config-portique" value=""/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>Ouverture (m)</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" id="ouverture-portique" class="config-commat config-tour-result config-portique" value=""/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>Profondeur (m)</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" id="prof-portique" class="config-commat config-tour-result config-portique" value=""/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <input type="button" id="calcul-lestage-input-portique" class="btn btn-primary" value="Commencer les calculs"/>
+                        <input type="button" class="btn btn-primary reset-calcul" value="Recommencer" data-target="portique"/>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer text-muted">
+                <div id="div-lestage-calcul-table" class="">
+                    <div id="div-block-table-calcul-vent-portique">
+                        <table id="data-vent-table">
+                            <thead>
+                            <th colspan="2">Calcul du lestage</th>
+                            <th><a class="detail-tableau-vent-toggle" data-target="portique"> <i class="ti-arrow-circle-down"> détails</i></a></th>
+                            </thead>
+                            <tbody>
+                            <tr class="start">
+                                <td>Vitesse du vent = </td>
+                                <td><input type="text" class="config-commat input-v-A cl-vitesse" tabindex="55"/></td>
+                                <td>km/h</td>
+                            </tr>
+                            <tr>
+                                <td>Vitesse du vent = </td>
+                                <td><input type="text" class="input-v-B" tabindex="-1"/></td>
+                                <td>m/s</td>
+                            </tr>
+                            <tr>
+                                <td>Pression dynamique générée par le vent = </td>
+                                <td><input type="text" class="input-v-C" tabindex="-1"/></td>
+                                <td>daN/m²</td>
+                            </tr>
+                            <tr>
+                                <td>Effort sur une tour = </td>
+                                <td><input type="text" class="input-v-D" tabindex="-1"/></td>
+                                <td>daN</td>
+                            </tr>
+                            <tr>
+                                <td>Effort sur le passage = </td>
+                                <td><input type="text" class="input-v-E" tabindex="-1"/></td>
+                                <td>daN</td>
+                            </tr>
+                            <tr>
+                                <td>Moment Renversant = </td>
+                                <td><input type="text" class="input-v-F" tabindex="-1"/></td>
+                                <td>daN.m</td>
+                            </tr>
+                            <tr>
+                                <td>Moment Stabilisant = </td>
+                                <td><input type="text" class="input-v-G" tabindex="-1"/></td>
+                                <td>daN.m</td>
+                            </tr>
+                            <tr>
+                                <td>Ecart ("+" Stable et "-" Instable) = </td>
+                                <td><input type="text" class="input-v-H" tabindex="-1"/></td>
+                                <td>daN.m</td>
+                            </tr>
+                            <tr class="rowResultLestagePortique">
+                                <td>LEST A PREVOIR </td>
+                                <td><input type="text" id="resultLestagePortique" tabindex="-1" class="input-v-L"/></td>
+                                <td>kg par tour</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <div class="div-btn-pression-calcul">
+                            <input type="button" class="btn-calcul-vent-portique btn btn-primary" tabindex="60" value="Calculer"/>
+                        </div>
+
+                        <div id="div-table-pression-sol-portique">
+                            <table>
+                                <thead>
+                                <th colspan="3">Calcul de la pression au sol</th>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>Type de cale </td>
+                                    <td>
+                                        <label>Circulaire <input name="" id="chx-cir-cale" data-group="group1" class="chx-cale-portique chx-cale" type="checkbox" value="circulaire"/></label>
+                                    </td>
+                                    <td>
+                                        <label>Rectangulaire <input name="" id="chx-rec-cale"data-group="group1" class="chx-cale-portique chx-cale" type="checkbox" value="rectangulaire"/></label>
+                                    </td>
+                                </tr>
+                                <tr id="row-diametre-portique">
+                                    <td>Diamètre (cm) = </td>
+                                    <td><input type="text" class="config-commat background-very-light-blue input-v-DIAM-lon" tabindex="57" placeholder=""/></td>
+                                    <td><input type="text" class="config-commat background-very-light-blue input-v-DIAM-lar" tabindex="58" placeholder="largeur"/></td>
+                                </tr>
+                                <tr>
+                                    <td>Surface Cale (cm²) = </td>
+                                    <td><input type="text" class="config-commat input-v-SC" tabindex="59"/></td>
+                                    <td>cm²</td>
+                                </tr>
+                                <tr>
+                                    <td>Descente de charge par pied = </td>
+                                    <td><input type="text" class="config-commat input-v-CHARGE" tabindex="-1"/></td>
+                                    <td>kg</td>
+                                </tr>
+                                <tr>
+                                    <td>Pression générée par pied <i id="showPressionSolDetails" data-toggle="modal" data-target="#pressionSolDetails" data-keyboard="true" data-backdrop="false" class="ti-help-alt c-blue-dashboard"></i> = </td>
+                                    <td><input type="text" class="input-v-PPP" tabindex="-1"/></td>
+                                    <td>bar(s)</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <div class="div-btn-pression-calcul">
+                                <input type="button" class="btn-calcul-pression-sol-portique btn btn-primary" tabindex="60" value="Calculer"/>
+                            </div>
+                        </div>
+
+                        <div class="div-export-pdf-portique">
+                            <a href="" class="l-export-pdf" target="_blank"><i class="ti-file"></i>Imprimer le rapport</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

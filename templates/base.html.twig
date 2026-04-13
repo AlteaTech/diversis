@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="icon" href="/img/logo_letter.png" />
+        <title>Application WinDiv</title>
+     	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" ></script>
+        <link rel="stylesheet" href="{{ asset('build/css/app-css.css') }}">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+        <script src="https://www.google.com/recaptcha/api.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+    	{% include 'header/header.html.twig' %}
+    </head>
+    <body>
+        {% block body %}
+        	{% block content %}
+        	{% endblock %}
+        {% endblock %}
+        {% block javascripts %}
+        {% endblock %}
+
+        <!-- The Modal -->
+        <div class="modal" id="portiqueSchema">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <img src="" class="img-modal-schema"/>
+
+                </div>
+            </div>
+        </div>
+        <!-- The Modal -->
+        <div class="modal" id="portiqueTotem">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <img src="" class="img-modal-schema"/>
+
+                </div>
+            </div>
+        </div>
+        <!-- The Modal -->
+        <div class="modal" id="portiqueTour">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <img src="" class="img-modal-schema"/>
+
+                </div>
+            </div>
+        </div>
+        <!-- The Modal -->
+        <div class="modal" id="pressionSolDetails">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <img src="/img/Pression sol.jpg" class="img-modal-schema"/>
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <!--   ROUTNG -->
+        <input type="hidden" id="path-getListUser" value="{{ path('getListUser') }}"/>
+        <input type="hidden" id="path-getStructureFromUser" value="{{ path('getStructureFromUser') }}"/>
+        <input type="hidden" id="path-delteUserByID" value="{{ path('delteUserByID') }}"/>
+
+        <input type="hidden" id="path-saveDOStruct" value="{{ path('saveDOStruct') }}"/>
+        <input type="hidden" id="path-saveLestageStruct" value="{{ path('saveLestageStruct') }}"/>
+        <input type="hidden" id="path-saveSolStruct" value="{{ path('saveSolStruct') }}"/>
+        <input type="hidden" id="path-saveCalcul" value="{{ path('saveCalcul') }}"/>
+
+        <input type="hidden" id="path-showCalcul" value="{{ path('showCalcul') }}"/>
+
+        <input type="hidden" id="path-test" value="{{ path('test') }}" />
+
+        <script src="{{ asset('build/js/init.js') }}"></script>
+        <script src="{{ asset('build/js/js.js') }}"></script>
+        <script src="{{ asset('build/js/functions.js') }}"></script>
+        <script src="{{ asset('build/js/tourEvent.js') }}"></script>
+        <script src="{{ asset('build/js/totemEvent.js') }}"></script>
+        <script src="{{ asset('build/js/portiqueEvent.js') }}"></script>
+        <script src="{{ asset('build/js/ajax.js') }}"></script>
+
+        <script src="{{ asset('build/js/cookie/jquery.cookie.js') }}"></script>
+    </body>
+</html>

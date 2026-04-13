@@ -1,0 +1,247 @@
+{% block StrucTotem %}
+    <div class="layers layers-totem">
+        <div class="card text-center card-totem">
+            <div class="card-header">
+                <label class="col-sm-4 "><h1>Totem</h1></label>
+                <table class="tbl-totem-toggle col-sm-5">
+                    <tr>
+                        <td>
+                            <div class="toggle-totem toggle-1">
+                                <button id="id-toggle-totem-habille" type="button" class="btn btn-lg btn-toggle" data-toggle="button" aria-pressed="false" autocomplete="off">
+                                    <div class="handle"></div>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="toggle-totem toggle-type">
+                                <button id="id-toggle-totem-type" type="button" class="btn btn-lg btn-toggle" data-toggle="button" aria-pressed="false" autocomplete="off">
+                                    <div class="handle"></div>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+            <div class="card-body">
+                <div id="infos_event_totem">
+                    <table>
+                        <tr>
+                            <td><label>Événement : </label><input type="text" id="nom_event_totem"/></td>
+                            <td><label>Dénomination de la structure : </label><input type="text" id="nom_struct_totem"/></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="spr-totem content-sprite full">
+                    <div id="spr-totem" ></div>
+                    <div id="div-input-totem">
+                        <div class="box-calcul-obligatoire">
+                            <table >
+                                <thead>
+                                <th colspan="2">Informations principales  <i id="showDetailTotem" data-toggle="modal" data-target="#portiqueTotem" data-keyboard="true" data-backdrop="false" class="ti-help-alt c-blue-dashboard"></i></th>
+                                </thead>
+                                <tr>
+                                    <td class="sep-data-totem" colspan="2">Le mât</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label >Hauteur totale (m) = </label>
+                                    </td>
+                                    <td>
+                                        <input type="text" id="hauteur-totale-totem" class="config-commat config-totem-result" tabindex="103" value=""/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label >Poids (kg) = </label>
+                                    </td>
+                                    <td>
+                                        <input type="text" id="poids-totem" class="config-commat config-totem-result" tabindex="104"  value=""/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>Largeur (m) = </label>
+                                    </td>
+                                    <td>
+                                        <input type="text" id="largeur-totem" class="config-commat config-totem-result" tabindex="105"  value=""/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="sep-data-totem" colspan="2">La base</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>Base de stabilité (m) = </label>
+                                    </td>
+                                    <td>
+                                        <input type="text" id="base-stab-totem" class="config-commat config-totem-result" tabindex="106"  value=""/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>Poids de la base (kg) = </label>
+                                    </td>
+                                    <td>
+                                        <input type="text" id="base-poids-totem" class="config-commat config-totem-result" tabindex="107"  value=""/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="sep-data-totem" colspan="2">Equipement en hauteur</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label >Surface (m²) = </label>
+                                    </td>
+                                    <td>
+                                        <input type="text" id="surface-eq-totem" class="config-commat config-totem-result" tabindex="100" value=""/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label >Poids (kg) = </label>
+                                    </td>
+                                    <td>
+                                        <input type="text" id="poids-eq-totem" class="config-commat config-totem-result" tabindex="101" value=""/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label >Hauteur cdg (m) = </label>
+                                    </td>
+                                    <td>
+                                        <input type="text" id="hauteur-eq-totem" class="config-commat config-totem-result" tabindex="102" value=""/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>    
+                        <input type="button" id="calcul-lestage-input-totem" class="btn btn-primary" value="Commencer les calculs"/>
+                        <input type="button" class="btn btn-primary reset-calcul" value="Recommencer" data-target="totem"/>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer text-muted">
+                <div id="div-lestage-calcul-table" class="">
+                    <div id="div-block-table-calcul-vent-totem">
+                        <table id="data-vent-table">
+                            <thead>
+                            <th colspan="2">Calcul du lestage</th>
+                            <th><a class="detail-tableau-vent-toggle" data-target="totem"> <i class="ti-arrow-circle-down"> détails</i></a></th>
+                            </thead>
+                            <tbody>
+                            <tr class="start">
+                                <td>Vitesse du vent = </td>
+                                <td><input type="text" class="config-commat input-v-tt-A cl-vitesse" tabindex="300"/></td>
+                                <td>km/h</td>
+                            </tr>
+                            <tr>
+                                <td>Vitesse du vent = </td>
+                                <td><input type="text" class="input-v-tt-B" tabindex="-1"/></td>
+                                <td>m/s</td>
+                            </tr>
+                            <tr>
+                                <td>Pression dynamique générée par le vent = </td>
+                                <td><input type="text" class="input-v-tt-C" tabindex="-1"/></td>
+                                <td>daN/m²</td>
+                            </tr>
+                            <tr>
+                                <td>Effort sur le mât = </td>
+                                <td><input type="text" class="input-v-tt-D" tabindex="-1"/></td>
+                                <td>daN</td>
+                            </tr>
+                            <tr>
+                                <td>Moment sur le mât = </td>
+                                <td><input type="text" class="input-v-tt-E" tabindex="-1"/></td>
+                                <td>daN.m</td>
+                            </tr>
+                            <tr>
+                                <td>Effort sur l'équipement = </td>
+                                <td><input type="text" class="input-v-tt-F" tabindex="-1"/></td>
+                                <td>daN.m</td>
+                            </tr>
+                            <tr>
+                                <td>Moment sur l'équipement = </td>
+                                <td><input type="text" class="input-v-tt-G" tabindex="-1"/></td>
+                                <td>daN.m</td>
+                            </tr>
+                            <tr>
+                                <td>Moment renversant total = </td>
+                                <td><input type="text" class="input-v-tt-H" tabindex="-1"/></td>
+                                <td>daN.m</td>
+                            </tr>
+                            <tr>
+                                <td>Moment stabilisant = </td>
+                                <td><input type="text" class="input-v-tt-I" tabindex="-1"/></td>
+                                <td>daN.m</td>
+                            </tr>
+                            <tr>
+                                <td>Ecart ("+" stable et "-" instable) = </td>
+                                <td><input type="text" class="input-v-tt-J" tabindex="-1"/></td>
+                                <td>daN.m</td>
+                            </tr>
+                            <tr class="rowResultLestagetotem">
+                                <td>LEST A PREVOIR </td>
+                                <td><input type="text" id="resultLestagetotem" tabindex="-1" class="input-v-tt-K"/></td>
+                                <td>kg</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <div class="div-btn-calcul-vent div-btn-calcul-vent-totem">
+                            <input type="button" class="btn-calcul-vent-totem btn btn-primary" tabindex="301" value="Calculer"/>
+                        </div>
+                    </div>
+
+                    <div id="div-table-pression-sol-totem">
+                        <table>
+                            <thead>
+                            <th colspan="3">Calcul pression au sol</th>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Type de cale </td>
+                                <td>
+                                    <label>Circulaire <input name="" id="chx-cir-cale-totem" data-group="group1" tabindex="310" class="chx-cale-totem chx-cale" type="checkbox" value="circulaire"/></label>
+                                </td>
+                                <td>
+                                    <label>Rectangulaire <input name="" id="chx-rec-cale-totem" data-group="group1" tabindex="311" class="chx-cale-totem chx-cale" type="checkbox" value="rectangulaire"/></label>
+                                </td>
+                            </tr>
+                            <tr id="row-diametre-totem">
+                                <td>Diamètre (cm) = </td>
+                                <td><input type="text" class="config-commat config-commat background-very-light-blue input-v-tt-DIAM-lon" tabindex="321" placeholder=""/></td>
+                                <td><input type="text" class="config-commat config-commat background-very-light-blue input-v-tt-DIAM-lar" tabindex="322" placeholder="largeur"/></td>
+                            </tr>
+                            <tr>
+                                <td>Surface Cale = </td>
+                                <td><input type="text" class="config-commat config-commat input-v-tt-SC"/></td>
+                                <td>cm²</td>
+                            </tr>
+                            <tr>
+                                <td>Descente de charge = </td>
+                                <td><input type="text" class="config-commat input-v-tt-CHARGE" tabindex="-1"/></td>
+                                <td>kg</td>
+                            </tr>
+                            <tr>
+                                <td>Pression générée <i id="showPressionSolDetails" data-toggle="modal" data-target="#pressionSolDetails" data-keyboard="true" data-backdrop="false" class="ti-help-alt c-blue-dashboard"></i> = </td>
+                                <td><input type="text" class="input-v-tt-PPP" tabindex="-1"/></td>
+                                <td>bar(s)</td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="div-btn-pression-calcul">
+                            <input type="button" class="btn-calcul-pression-sol-totem btn btn-primary" tabindex="223" value="Calculer"/>
+                        </div>
+
+                    </div>
+                    <div class="div-export-pdf-totem">
+                        <a href="" class="l-export-pdf" target="_blank"><i class="ti-file"></i>Imprimer le rapport</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

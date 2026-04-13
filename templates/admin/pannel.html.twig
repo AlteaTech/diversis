@@ -1,0 +1,84 @@
+{% extends 'base.html.twig' %}
+{% use "admin/menu-nav-structure.html.twig" %}
+{% use "structures/portique.html.twig" %}
+{% use "structures/tour.html.twig" %}
+{% use "structures/totem.html.twig" %}
+{% use "admin/menu-nav-sidebar.html.twig" %}
+{% use "users/gestionUsers.html.twig" %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+    <div class="container-fluid full">
+          <div class="row full">
+            <div class="sidebar">
+                <div class="sidebar-inner">
+                    <div class="sidebar-logo">
+                        <div class="logo ">
+                            <a href="#" class="href-logo">
+                                <img class="img-logo" src="http://diversis.fr/wp-content/uploads/2019/03/1441114107.jpg" alt="logo diversis"/>
+                                <img class="img-logo-letter" src="{{ asset('img/logo_letter.png') }}" alt="logo diversis"/>
+                            </a>
+                        </div>
+                    </div>
+                    {% block menuSidebar %}
+                        {{ parent() }}
+                    {% endblock %}
+                </div>
+            </div>
+            <div class="page-contenair full">
+                <div class="header navbar">
+                    <div class="header-contenair">
+                        <div class="nav-left">
+                            <div class="sidebar-toggle">
+                                <a id="sidebar-toggle" class="" href="#">
+                                    <i class="ti-arrow-circle-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="nav-logo-windiv">
+                            <img src="{{ asset('img/logos-windiv.jpg') }}" alt="logo windiv" id="new-logo-windiv"/>
+                        </div>
+                        <div class="nav-right">
+                            <div class="sidebar-disconnect">
+                                <a id="sidebar-disconnect" class="" href="{{path('logout')}}">
+                                    <i class="ti-power-off"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <main class="main-content full">
+                    <div class="mainContent full">
+                        <div class="row full no-marg no-padd">
+                            <div class="col-md-12 full">
+
+                                {% block menuStructure %}
+                                    {{ parent() }}
+                                {% endblock %}
+
+                                {% block StrucPortique %}
+                                    {{ parent() }}
+                                {% endblock %}
+
+                                {% block StrucTour %}
+                                    {{ parent() }}
+                                {% endblock %}
+
+                                {% block StrucTotem %}
+                                    {{ parent() }}
+                                {% endblock %}
+
+                                {% block StrucGestionUser %}
+                                    {{ parent() }}
+                                {% endblock %}
+
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+          </div>
+      </div>
+{% endblock %}

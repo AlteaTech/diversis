@@ -1,0 +1,403 @@
+<style>
+    body {
+        font-family: serif;
+        font-size: 13px;
+    }
+    #box-global{
+        width: 100%;
+        height: 500px;
+        border: 1px solid black;
+        padding:5px;
+    }
+    .img-logo{
+        width: 17%;
+        margin: 5px 0 5px 45px;
+    }
+
+    .box-logo, .box-event{
+        margin: -10px -5px 0 -5px;
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+        border-bottom-color: blue;
+    }
+    .box-event{
+        margin: -10px -5px 0 -5px;
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+        border-bottom-color: blue;
+    }
+    .box-data{
+        margin: -10px -5px 0 -5px;
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+        border-bottom-color: blue;
+    }
+    .box-result{
+        margin: -10px -5px 0 -5px;
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+        border-bottom-color: blue;
+    }
+    .sbox-result{
+        margin-left: 43px;
+        width: 600px;
+        margin-bottom: 20px;
+        margin-top: 13px;
+    }
+    .box-conclu{
+        margin: -10px -5px 0 -5px;
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+        border-bottom-color: blue;
+        height: 200px;
+    }
+    .sbox-conclu{
+        margin-left: 56px;
+        width: 600px;
+        margin-bottom: 20px;
+    }
+
+    #div-img-struct{
+        border: 0.5px blue solid;
+        width: 200px;
+        margin-left: 385px;
+        width: 450px;
+        height: 300px;
+        margin-top: -300px;
+        border-radius: 30px;
+        margin-bottom: 20px;
+    }
+
+    .img-rep-tour{
+        width: 50%;
+        margin-left: 20px;
+    }
+
+    .img-rep-totem{
+        width: 23%;
+        margin-left: 75px;
+        margin-top: 30px;
+    }
+
+    .img-rep-portique{
+        width: 2400px;
+        height: 500px;
+        margin-left: 20px;
+        margin-top: 15px;
+    }
+
+    .img-portique-size-6{
+        background-image: url('img/structuresPdf/portique-pont-nu_x3.png');
+        margin: 0 auto;
+        width: 100%;
+        height: 0;
+        padding-bottom: 85%;
+        background-position: -885px 5px;
+        background-size: 420%;
+        display: block;
+    }
+
+    .portique-pont-nu_x3{
+        width: 350px;
+        margin-top: 0px;
+        margin-left: -50px;
+    }
+
+    #box-list-data{
+        width: 360px;
+        margin-top: 25px;
+        margin-left: 0px;
+        height: 300px;
+        overflow: hidden;
+    }
+    .list-data{
+        margin-left: 40px;
+    }
+    .list-data li{
+        padding-top: 2px;
+    }
+    .list-data .span-val-data, .span-val-conclu{
+        color: #007bff;
+    }
+    .list-data .span-key-data{
+        margin-left: 8px;
+    }
+    .list-result .span-key-result, .span-key-conclu{
+        margin-left: 8px;
+    }
+
+    #box-list-result{
+        margin-top: 10px;
+    }
+    .list-result span.span-val-result{
+        color: #007bff;
+        font-weight: bold;
+    }
+
+    .nota-result{
+        margin-bottom: 8px;
+        margin-left: 15px;
+    }
+    .under-box-event{
+        margin: 20px 0 10px 10px;
+    }
+    .lb-nom-struct, .lb-nom-event{
+        text-align: center;
+    }
+    .lb-nom-struct, .lb-nom-event label{
+        font-size: 15px;
+        font-weight: bold;
+    }
+    .lb-nom-struct span, .lb-nom-event label{
+        color: #007bff;
+    }
+    #div-tool{
+        margin-top: 10px;
+    }
+    #div-site{
+        margin-top: -15px;
+        text-align: right;
+        margin-right: 15px;
+    }
+    #div-title-data{
+        margin-left: 40px;
+        margin-top: 15px;
+        font-weight: bold;
+    }
+    #div-title-result, #div-title-conclu{
+        margin-top: 30px;
+        font-weight: bold;
+    }
+    #list-auteur span{
+        color: #007bff;
+    }
+    #list-auteur{
+        list-style-type: none;
+    }
+    #div-conclu-stab{
+        margin-left: 15px;
+    }
+
+    .box-filigrame{
+        position:absolute;
+        z-index: -1;
+        width: 3500px;
+        margin-top: 350px;
+        opacity:0.60;
+        -moz-opacity: 0.60;
+        filter: alpha(opacity=0.6);
+    }
+
+    #box-global{
+        z-index: 999;
+    }
+
+    .pont-n-1,.pont-h-1,.echaf-h-1,.echaf-n-1{
+        width: 300px;
+    }
+    .pont-n-2,.pont-h-2,.echaf-h-2,.echaf-n-2{
+        width: 320px;
+        margin-left: -30px;
+    }
+    .pont-n-3,.pont-h-3,.echaf-h-3,.echaf-n-3{
+        width: 350px;
+        margin-left: -50px;
+    }
+
+    .tour-n-3,.tour-n-2,.tour-n-1, .totem-h-1, .totem-h-2, .totem-n-1, .totem-n-2, .tour-h-1, .tour-h-2, .tour-h-3{
+        height: 280px;
+        width: 130px;
+        margin-left: 50px;
+    }
+
+    .tour-n-4, .tour-h-4{
+        height: 250px;
+        width: 110px;
+        margin-left: 50px;
+    }
+
+
+</style>
+<body>
+
+    <div id="box-global">
+        <div class="box-logo">
+            <img class="img-logo logo-diversis" src="http://diversis.fr/wp-content/uploads/2019/03/1441114107.jpg" alt="logo diversis"/>
+        </div>
+        <div class="box-event">
+            <div class="under-box-event">
+                <div class="lb-nom-struct">
+                    <label >Prédimensionnement de lestage pour <span>{{ nom_struct }}</span></label>
+                    <br/>
+                </div>
+                <div class="lb-nom-event"><label>{{ nom_event }}</label></div>
+                <ul id="list-auteur">
+                    <li>Date : <span>{{ date }}</span></li>
+                    <li>Auteur : <span>{{ auteur }}</span></li>
+                    <li>Email : <span>{{ email }}</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="box-data">
+            <div id="box-list-data">
+                <div id="div-title-data">1.  Données d'entrées</div>
+                <ul class="list-data">
+                    {% for key,value in listData %}
+                        {% if value is iterable %}
+                            <li><span class="span-key-data">{{ key }}</span></li>
+                            <ul class="sous-list-data">
+                                {% for k,v in value %}
+                                    <li><span class="span-key-data">{{ k }}</span> <span class="span-val-data">{{ v }}</span></li>
+                                {% endfor %}
+                            </ul>
+                        {% else %}
+                            {% if 'Vitesse de vent' in key %}
+                                <li><span class="span-key-data">{{ key }}</span><br /><span class="span-val-data">{{ value }}</span></li>
+                            {% else %}
+                                <li><span class="span-key-data">{{ key }}</span><span class="span-val-data">{{ value }}</span></li>
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+            <div id="div-img-struct" >
+                {% if typeStruct == 'portique' %}
+                    {% if typePortique == 'pont' %}
+                        {% if habille == 1 %}
+                            {% if sizeStructure == 1 %}
+                                <img class="img-rep-portique pont-h-1" src="img/structuresPdf/pont-hab_1x.png" />
+                            {% elseif sizeStructure == 2 %}
+                                <img class="img-rep-portique pont-h-2" src="img/structuresPdf/pont-hab_2x.png" />
+                            {% else %}
+                                <img class="img-rep-portique pont-h-3" src="img/structuresPdf/pont-hab_3x.png" />
+                            {% endif %}
+                        {% else %}
+                            {% if sizeStructure == 1 %}
+                                <img class="img-rep-portique pont-n-1" src="img/structuresPdf/pont-nu_1x.png" />
+                            {% elseif sizeStructure == 2 %}
+                                <img class="img-rep-portique pont-n-2" src="img/structuresPdf/pont-nu_2x.png" />
+                            {% else %}
+                                <img class="img-rep-portique pont-n-3" src="img/structuresPdf/pont-nu_3x.png" />
+                            {% endif %}
+                        {% endif %}
+                    {% else %}
+                        {% if habille == 1 %}
+                            {% if sizeStructure == 1 %}
+                                <img class="img-rep-portique echaf-h-1" src="img/structuresPdf/echaffaudage-hab_1x.png" />
+                            {% elseif sizeStructure == 2 %}
+                                <img class="img-rep-portique echaf-h-2" src="img/structuresPdf/echaffaudage-hab_2x.png" />
+                            {% else %}
+                                <img class="img-rep-portique echaf-h-3" src="img/structuresPdf/echaffaudage-hab_3x.png" />
+                            {% endif %}
+                        {% else %}
+                            {% if sizeStructure == 1 %}
+                                <img class="img-rep-portique echaf-n-1" src="img/structuresPdf/echaffaudage-nu_1x.png" />
+                            {% elseif sizeStructure == 2 %}
+                                <img class="img-rep-portique echaf-n-2" src="img/structuresPdf/echaffaudage-nu_2x.png" />
+                            {% else %}
+                                <img class="img-rep-portique echaf-n-3" src="img/structuresPdf/echaffaudage-nu_3x.png" />
+                            {% endif %}
+                        {% endif %}
+                    {% endif %}
+
+                {% endif %}
+                {% if typeStruct == 'totem' %}
+                    {% if habille == 1 %}
+                        {% if formeTotem == "triangle" %}
+                            {% if sizeStructure == 1 %}
+                                <img class="img-rep-portique totem-h-1" src="img/structuresPdf/totem-triangle-hab_1x.png" />
+                            {% else %}
+                                <img class="img-rep-portique totem-h-2" src="img/structuresPdf/totem-triangle-hab_2x.png" />
+                            {% endif %}
+                        {% else %}
+                            {% if sizeStructure == 1 %}
+                                <img class="img-rep-portique totem-h-1" src="img/structuresPdf/totem-carre-hab_1x.png" />
+                            {% else %}
+                                <img class="img-rep-portique totem-h-2" src="img/structuresPdf/totem-carre-hab_2x.png" />
+                            {% endif %}
+                        {% endif %}
+                    {% else %}
+                        {% if formeTotem == "triangle" %}
+                            {% if sizeStructure == 1 %}
+                                <img class="img-rep-portique totem-h-1" src="img/structuresPdf/totem-triangle-nu_1x.png" />
+                            {% else %}
+                                <img class="img-rep-portique totem-h-2" src="img/structuresPdf/totem-triangle-nu_2x.png" />
+                            {% endif %}
+                        {% else %}
+                            {% if sizeStructure == 1 %}
+                                <img class="img-rep-portique totem-n-1" src="img/structuresPdf/totem-carre-nu_1x.png" />
+                            {% else %}
+                                <img class="img-rep-portique totem-n-2" src="img/structuresPdf/totem-carre-nu_2x.png" />
+                            {% endif %}
+                        {% endif %}
+                    {% endif %}
+                {% endif %}
+                {% if typeStruct == 'tour' %}
+                    {% if habille == 1 %}
+                        {% if sizeStructure == 1 %}
+                            <img class="img-rep-portique tour-h-1" src="img/structuresPdf/tour-hab_4m.png" />
+                        {% elseif sizeStructure == 2 %}
+                            <img class="img-rep-portique tour-h-2" src="img/structuresPdf/tour-hab_6m.png" />
+                        {% elseif sizeStructure == 3 %}
+                            <img class="img-rep-portique tour-h-3" src="img/structuresPdf/tour-hab_8m.png" />
+                        {% else %}
+                            <img class="img-rep-portique tour-h-4" src="img/structuresPdf/tour-hab_10m.png" />
+                        {% endif %}
+                    {% else %}
+                        {% if sizeStructure == 1 %}
+                            <img class="img-rep-portique tour-n-1" src="img/structuresPdf/tour-nue_4m.png" />
+                        {% elseif sizeStructure == 2 %}
+                            <img class="img-rep-portique tour-n-2" src="img/structuresPdf/tour-nue_6m.png" />
+                        {% elseif sizeStructure == 3 %}
+                            <img class="img-rep-portique tour-n-3" src="img/structuresPdf/tour-nue_8m.png" />
+                        {% else %}
+                            <img class="img-rep-portique tour-n-4" src="img/structuresPdf/tour-nue_10m.png" />
+                        {% endif %}
+                    {% endif %}
+                {% endif %}
+            </div>
+        </div>
+        <div class="box-result">
+            <div class="sbox-result">
+                <div id="div-title-result">2.  Résultat d'analyse</div>
+                <div id="box-list-result">
+                    <ul class="list-result">
+                        <li><span class="span-key-result">Lestage nécessaire pour un vent à {{ vitesseVent }} km/h : </span><span class="span-val-result">{{ listResult.lestage }}</span></li>
+                        <li><span class="span-key-result">Descentes de charges maximales générée/pied : </span><span class="span-val-result">{{ listResult.charge }}</span></li>
+                        <li><span class="span-key-result">Pression maximale générée au sol : </span><span class="span-val-result">{{ listResult.pression }}</span></li>
+                    </ul>
+                </div>
+
+                <div class="nota-result"><i>Nota : les calculs ne prennent intrinsèquement en compte aucun coefficient
+                        de sécurité;
+                        il appartient à l'utilisateur <u>de prendre en compte les coefficients de majoration
+                        adéquats</u></i>
+                </div>
+            </div>
+        </div>
+        <div class="box-conclu">
+            <div class="sbox-conclu">
+                <div id="div-title-conclu">3.  Conclusion</div><br>
+
+                {% if typeStruct == 'tour' %}
+                    <div id="div-conclu-stab">La stabilité de cette {{ typeStruct }} au renversement est assurée pour :</div>
+                {% else %}
+                    <div id="div-conclu-stab">La stabilité de ce {{ typeStruct }} au renversement est assurée pour :</div>
+                {% endif %}
+                <div id="div-list-conclu">
+                    <ul id="list-conclu">
+                        <li><span class="span-key-conclu">Un lestage de </span><span class="span-val-conclu">{{ listConclu.lestage }}</span></li>
+                        <li><span class="span-key-conclu">Un vent ne dépassant pas </span><span class="span-val-conclu">{{ listConclu.vent }}</span></li>
+                        <li><span class="span-key-conclu">Un sol capable de supporter </span><span class="span-val-conclu">{{ listConclu.pression }}</span></li>
+                    </ul>
+                </div>
+                <div id="div-conclu-rappel" style="font-size:11px;">
+                    <i><b>Rappel :</b> L'utilisation de l’outil WinDiv relève de la seule responsabilité de l'utilisateur; DIVERSIS décline toute responsabilité quant aux conséquences, dommages ou préjudices résultant de l’utilisation des informations fournies par WinDiv.</i>
+                </div>
+            </div>
+        </div>
+        <div class="box-footer">
+            <div id="div-tool">WinDiv 1.1.0</div>
+            <div id="div-site">www.diversis.fr</div>
+        </div>
+    </div>

@@ -1,0 +1,98 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+login-check:
+  path: '/auth/check'
+
+main:
+  path: /
+  controller: App\Controller\MainController::index
+
+init:
+  path: /init
+  controller: App\Controller\MainController::init
+
+test:
+  path: /test
+  controller: App\Controller\PdfController::showPDF
+
+
+#AdminController
+panel_admin:
+  path: /calcul-diversis
+  controller: App\Controller\AdminController::index
+
+
+#SecurityController
+testUser:
+  path: /testUser
+  controller: App\Controller\SecurityController::testUser
+
+inscription:
+  path: /inscription
+  controller: App\Controller\SecurityController::inscription
+
+login:
+  path: /login
+  controller: App\Controller\SecurityController::login
+  requirements:
+       _method:  POST
+  options:
+      expose: true
+
+logout:
+  path: /logout
+  controller: App\Controller\SecurityController::logout
+
+confirm_mail:
+  path: /confirm/{key}
+  controller: App\Controller\SecurityController::confirm
+
+
+#UserController
+getListUser:
+  path: /getListUser
+  controller: App\Controller\UserController::getListUser
+
+getStructureFromUser:
+  path: /getStructureFromUser
+  controller: App\Controller\UserController::getStructureFromUser
+
+delteUserByID:
+  path: /delteUserByID
+  controller: App\Controller\UserController::delteUserByID
+
+
+#StructureController
+saveDOStruct:
+  path: /saveDOStruct
+  controller: App\Controller\StructureController::saveDOStruct
+
+saveLestageStruct:
+  path: /saveLestageStruct
+  controller: App\Controller\StructureController::saveLestageStruct
+
+saveSolStruct:
+  path: /saveSolStruct
+  controller: App\Controller\StructureController::saveSolStruct
+
+saveCalcul:
+  path: /saveCalcul
+  controller: App\Controller\StructureController::saveCalcul
+
+showCalcul:
+  path: /showCalcul
+  controller: App\Controller\StructureController::showCalcul
+
+#PDFController
+generatePDF:
+  path: /exportPDF/{idPDF}
+  controller: App\Controller\PdfController::showPDF
+
+
+
+
+
+
+
+
