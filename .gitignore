@@ -37,3 +37,5 @@ yarn.lock
 /.idea/workspace.xml
 /symfony.lock
 /symfony.lock
+
+.idea/
