@@ -73,7 +73,7 @@ class SecurityController extends AbstractController
         $form          = $this->createForm(RegistrationForm::class);
 		$util          = new Utils;
 		$erreurCatched = "";
-		$secret        = "6Lfo9LAUAAAAADwg522NMgK5KTAYMwIM1byplAMw";
+		$secret        = "6Lc6psAsAAAAAE9pCw8gun4Tw129eTD28mhlmitz";
 		$response      = null;
 		$userIP        = $_SERVER["REMOTE_ADDR"];
 		$const		   = new Constantes();
