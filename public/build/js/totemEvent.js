@@ -508,7 +508,7 @@ $(document).ready(function() {
 		larg = parseFloat($largeur * 0.01) * 5;
 		haut = parseFloat($hauteur);
 		if( haut > larg){
-			alert(listMessageAlert.alertLargeurTropPetite);
+			alert(listMessageAlert.alertLargeurTropPetiteTotem);
 			event.stopPropagation();
 			return false;
 		}
