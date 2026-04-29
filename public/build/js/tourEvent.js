@@ -48,7 +48,11 @@ $(document).ready(function() {
 			$f = parseFloat($("#face-tour").val());
 			$p = parseFloat($("#prof-tour").val());
 
-			if(!testLargeurBaseTour($h, Math.min($f,$p ))){
+			if(!testLargeurBaseTour($h, $p)){
+
+                $(".layers-tour .card-footer").css("display","none");
+                $("#div-block-table-calcul-vent-tour").css("display", "none");
+                $("#div-table-pression-sol-tour").css("display", "none");
 				event.stopPropagation();
 				return false;
 			}

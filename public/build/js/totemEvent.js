@@ -48,6 +48,15 @@ $(document).ready(function() {
 			return false;
 		} else {
 
+            if(!testLargeurBaseTotem(parseFloat($("#hauteur-totale-totem").val()), parseFloat($("#base-stab-totem").val()))){
+                event.stopPropagation();
+
+                $("#div-block-table-calcul-vent-totem").css("display", "none");
+                $("#div-table-pression-sol-totem").css("display", "none");
+                $(".layers-totem .card-footer").css("display","none");
+                return false;
+            }
+
 			$mt     = parseFloat($("#poids-totem").val());
 			$lt     = parseFloat($("#largeur-totem").val());
 			$hcdgt  = $ht / 2;
@@ -104,7 +113,6 @@ $(document).ready(function() {
 			var lon = $(".input-v-tt-DIAM-lon").val();
 
 
-
 			if (dataPressionSolTotem.typeCale == typeCale.rec) {
 				if (!lar && !lon) {
 					alert(listMessageAlert.alertLargLongDiam);
@@ -112,11 +120,6 @@ $(document).ready(function() {
 					return false;
 				} else {
 					if (lar && lon) {
-
-						if(!testLargeurBaseTotem(parseFloat($("#hauteur-totale-totem").val()), Math.min(lar,lon))){
-							event.stopPropagation();
-							return false;
-						}
 
 						dataPressionSolTotem.diametreLargeur = parseFloat(lar);
 						dataPressionSolTotem.diametreLongueur = parseFloat(lon);
@@ -502,13 +505,16 @@ $(document).ready(function() {
 	/**
 	 *
 	 * @param $hauteur
-	 * @param $largeur
+	 * @param $max
 	 */
-	function testLargeurBaseTotem($hauteur, $largeur){
-		larg = parseFloat($largeur * 0.01) * 5;
+	function testLargeurBaseTotem($hauteur, $max){
+		max = parseFloat($max) * 5;
 		haut = parseFloat($hauteur);
-		if( haut > larg){
-			alert(listMessageAlert.alertLargeurTropPetite);
+        console.log("hauteur : " + $hauteur);
+        console.log("max input : " + $max);
+        console.log("max : " + max);
+		if( haut > max){
+			alert(listMessageAlert.alertBaseStabilite);
 			event.stopPropagation();
 			return false;
 		}

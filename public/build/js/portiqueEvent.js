@@ -173,12 +173,15 @@ $(document).ready(function() {
 			$pr = $("#prof-portique").val();
 			$o = $("#ouverture-portique").val();
 
-			if(HabillageStructure.type == typePortique.echaf){
-				if(!testLargeurBasePortique($("#hauteur-totale-portique").val(), $pr)){
-					event.stopPropagation();
-					return false;
-				}
-			}
+            if(!testLargeurBasePortique($("#hauteur-totale-portique").val(), $pr)){
+                event.stopPropagation();
+
+                $("#div-block-table-calcul-vent-portique").css("display", "none");
+                $("#div-table-pression-sol-portique").css("display", "none");
+                $(".layers-portique .card-footer").css("display","none");
+
+                return false;
+            }
 
 			$eventName = $("#nom_event_portique").val();
 			$nameStruc = $("#nom_struct_portique").val();
@@ -248,13 +251,6 @@ $(document).ready(function() {
 				} else {
 
 					if (lar && lon) {
-
-						if(HabillageStructure.type == typePortique.pont){
-							if(!testLargeurBasePortique($("#hauteur-totale-portique").val(), Math.min(lar,lon) * 0.01)){
-								event.stopPropagation();
-								return false;
-							}
-						}
 						dataPressionSolPortique.diametreLargeur = parseFloat(lar);
 						dataPressionSolPortique.diametreLongueur = parseFloat(lon);
 						calculPressionSolPortique();
@@ -273,13 +269,6 @@ $(document).ready(function() {
 					return false;
 				} else {
 					if (lon) {
-
-						if(HabillageStructure.type == typePortique.pont){
-							if(!testLargeurBasePortique($("#hauteur-totale-portique").val(), lon * 0.01)){
-								event.stopPropagation();
-								return false;
-							}
-						}
 
 						dataPressionSolPortique.diametreLongueur = parseFloat(lon);
 						calculPressionSolPortique();

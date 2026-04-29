@@ -21,6 +21,7 @@ var listMessageAlert = {
 	alertLestageObligatoire : 'Veuillez faire le calcul du lestage an amont',
 	alertFullCallRectangulaireObligatoire : 'Vous devez saisir la longueur ainsi que la largeur pour la cale',
 	alertLargeurTropPetite : 'La hauteur ne peut pas être supérieur à 5 fois la plus petite dimension de la base',
+    alertBaseStabilite : 'La hauteur ne peut pas être supérieur à 5 fois la base de stabilité',
 	alertLargeurTropPetiteTotem : 'La hauteur ne peut pas être supérieur à 5 fois la plus petite dimension de la cale'
 }
 
