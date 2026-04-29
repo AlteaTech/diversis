@@ -72,7 +72,7 @@ class Users
 			$link 	= str_replace('%', '_', $link);
 
 			$user->setEmail($email);
-			$user->setIsActive(0);
+			$user->setIsActive(1);
 			$user->setLinkConfirm(addslashes($link));
 			$user->setPrenom($prenom);
 			$user->setNom($nom);

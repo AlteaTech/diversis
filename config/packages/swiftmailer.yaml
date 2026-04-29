@@ -5,5 +5,5 @@ swiftmailer:
     port: 465
     host: ssl0.ovh.net
     username: ne-pas-repondre@diversis.fr
-    password: Y3VjmmcD7zzEnFB4
+    password: YEXFGUn2IBHEYBIM2R2rmE1r8jKX1e
     spool: { type: 'memory' }

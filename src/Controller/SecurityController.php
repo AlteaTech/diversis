@@ -115,7 +115,7 @@ class SecurityController extends AbstractController
                 }
                 return $this->render('security/login.html.twig', [
                     'registrationForm' => $form->createView(),
-                    'message_conn' => "Veuillez confimer votre inscription par le mail de confirmation que nous vous avons envoyé.",
+                    'message_conn' => "",
                     'is_authen_form' => 0
                     ]);
             }
